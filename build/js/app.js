@@ -1,0 +1,2 @@
+function iniciarApp(){showInfo()}function showInfo(){document.querySelectorAll(".questions__title").forEach(t=>{t.addEventListener("click",()=>{document.querySelector(".desktop-illustration__box").classList.toggle("active"),t.classList.toggle("active");const e=t.nextElementSibling;e.classList.toggle("show"),console.log(e)})})}document.addEventListener("DOMContentLoaded",(function(){iniciarApp()}));
+//# sourceMappingURL=app.js.map

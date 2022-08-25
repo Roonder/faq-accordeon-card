@@ -1,0 +1,101 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.ilustraciones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    
+    .mobile-illustration{
+        display: block;
+        position: absolute;
+        width: 24rem;
+        margin-top: -30.2rem; //18.2rem - Last Good Response on Responsively
+        @include m.mobile{
+            display: none;
+        }
+    }
+
+    .desktop-illustration,
+        .desktop-illustration__box{
+            display: none;
+            @include m.mobile{
+                display: block;
+                width: 40rem;
+                position: absolute;
+                margin-left: -18rem;
+            }
+        @include m.mobile{
+            .mobile-illustration{
+                display: none;
+            }
+        }
+        }
+        .desktop-illustration{
+            overflow:hidden;
+        }
+        .desktop-illustration__box{
+            width: 12rem;
+            margin-top: 8rem;
+            margin-right: 22rem;
+            transition: all .3s ease;
+
+            &.active{
+                transition: all .3s ease;
+                width: 16rem;
+                margin-right: 30rem;
+            }
+        }
+}
+.questions{
+    border-bottom: 1px solid v.$dividerBlue;
+    
+    &__title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+
+        &.active{
+            padding-bottom: 0;
+            h2{
+                font-weight: 700;
+                font-size: 1.38rem;
+            }
+        }
+
+        &:hover{
+            cursor: pointer;
+            h2{
+                color: v.$redText;
+            }
+        }
+        
+        h2{
+            color: v.$blueText;
+            font-weight: 400;
+            font-size: 1.2rem;
+            margin-right: 4rem;
+        }
+
+        img{
+            margin-top: .5rem;
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+
+    &__info{
+        display: none;
+        &.show{
+            display: flex;
+            p{
+                padding: 1rem 6rem 1rem 1rem; 
+                font-size: 1.2rem;
+                color: v.$lightGrayText;
+            }
+        }
+    }
+}
