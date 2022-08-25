@@ -15,7 +15,6 @@ function showInfo() {
             section.classList.toggle('active');
             const info = section.nextElementSibling;
             info.classList.toggle('show');
-            console.log(info);
         });
     })
 }
